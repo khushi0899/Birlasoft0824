@@ -1,0 +1,240 @@
+﻿@model Medicare.Models.Consultation
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+
+      .card{
+          height:250px;
+          width:180px;
+           margin: 0 0.5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+    border-radius: 0;
+      }
+      .card h5{
+          font-size:15px;
+      }
+
+      .box{
+            background:#3fbbc0;
+      }
+      .contact-form{
+          background: #fff;
+          margin-top: 10%;
+          margin-bottom: 5%;
+          width: 70%;
+      }
+      .contact-form .form-control{
+          border-radius:1rem;
+      }
+      .contact-form form{
+          padding: 14%;
+      }
+      .contact-form form .row{
+          margin-bottom: -7%;
+      }
+      .contact-form h3{
+          margin-bottom: 8%;
+          margin-top: -10%;
+          text-align: center;
+          color: #0062cc;
+
+      }
+      .contact-form h5{
+          margin:10px;
+          padding:10px;
+          color:#0062cc;
+          border:2px solid;
+          text-align:center;
+      }
+      .contact-form .btnContact {
+          width: 50%;
+          border: none;
+          border-radius: 1rem;
+          padding: 1.5%;
+          background: #dc3545;
+          font-weight: 600;
+          color: #fff;
+          cursor: pointer;
+      }
+      .btnContactSubmit
+      {
+          width: 50%;
+          }
+</style>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="https://www.samhouston.net/images/uploads/_1060x500_crop_center-center_none/iStock-1200969581.jpg" alt="vedio consultation" height="500px">
+            <div class="carousel-caption d-none d-md-block text-dark bold text-left" style="bottom:0%; margin-left:0px">
+                <h1>Skip the travel!<br />Take Online Doctor<br /> Consultation<br /></h1><h4> Private consultation + Audio call<br /> Starts at just ₹499</h4>
+                <p>Vedio Consultation </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <br /><br />
+    <h1>
+        25+ Specialities
+    </h1>
+    <h3>Consult with top doctors across specialities</h3>
+    <br /><br />
+</div>
+
+<div class="row" style="column-gap:30px; row-gap:30px">
+    <div class="card">
+        <img class="card-img-top" src="https://www.practo.com/consult/static/images/top-speciality-gynaecologist.svg" alt="Card image cap" height="150px" width="200px">
+        <div class="card-body">
+            <h5 class="card-title">Gynecologist</h5>
+            <p class="card-text"> Fee - 499/.<br /> <a class="bold" asp-area="Manager" asp-controller="Consultations" asp-action="ConsultGynaecologist"> Consult Now</a></p>
+
+
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="https://www.practo.com/consult/static/images/top-speciality-gp.svg" alt="General Physician" height="150px" width="200px">
+        <div class="card-body">
+            <h5 class="card-title">Physician</h5>
+            <p class="card-text"> Fee - 499/<br /><a class="bold" asp-area="Manager" asp-controller="Consultations" asp-action="ConsultGeneralPhysician"> Consult Now</a></p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="https://www.practo.com/consult/static/images/top-speciality-dermatologist.svg" alt="Dermatologist" height="150px" width="200px">
+        <div class="card-body">
+            <h5 class="card-title">Dermatologist</h5>
+            <p class="card-text"> Fee - 499/<br /><a class="bold" asp-area="Manager" asp-controller="Consultations" asp-action="ConsultDermatologist"> Consult Now</a></p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="https://www.practo.com/consult/static/images/top-speciality-psychiatric.svg" alt="Psychiatric" height="150px" width="200px">
+        <div class="card-body">
+            <h5 class="card-title">Psychiatric</h5>
+            <p class="card-text"> Fee - 499/<br /><a class="bold" asp-area="Manager" asp-controller="Consultations" asp-action="ConsultPsychiatry"> Consult Now</a></p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img class="card-img-top" src="https://www.practo.com/consult/static/images/top-speciality-kidney.svg" alt="Urologist" height="150px" width="200px">
+        <div class="card-body">
+            <h5 class="card-title">Urologist</h5>
+            <p class="card-text"> Fee - 499/<br /><a class="bold" asp-area="Manager" asp-controller="Consultations" asp-action="ConsultUrologist"> Consult Now</a></p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img class="card-img-top" src="https://www.practo.com/consult/static/images/top-speciality-pediatric.svg" alt="Pediatrician" height="150px" width="200px">
+        <div class="card-body">
+            <h5 class="card-title">Pediatrician</h5>
+            <p class="card-text"> Fee - 499/<br /><a class="bold" asp-area="Manager" asp-controller="Consultations" asp-action="ConsultPediatric"> Consult Now</a></p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="https://www.practo.com/consult/static/images/top-speciality-stomach.svg" alt="Gastroenterology" height="150px" width="200px">
+        <div class="card-body">
+            <h5 class="card-title">Gastroenterology</h5>
+            <p class="card-text"> Fee - 499/<br /><a class="bold" asp-area="Manager" asp-controller="Consultations" asp-action="ConsultGastro"> Consult Now</a></p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <br /><br />
+    <h1>Common Health Concerns</h1>
+    <h4>Consult a doctor online for any health issue</h4>
+    <h5> Here You can consult any doctor</h5>
+    <br /><br />
+</div>
+
+<div class="box">
+    <div class="container contact-form">
+        <div class="contact-image">
+            @*  <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>*@
+        </div>
+        <form asp-action="Create">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="text-center">Vedio Consultations For Any Doctor</h3><br />
+                    <h5>Specialist Fee<br /><strong>₹499</strong></h5>
+                    <br />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group text-primary bold">
+                        <label asp-for="PatientName" class="control-label"></label>
+                        <input asp-for="PatientName" class="form-control" />
+                        <span asp-validation-for="PatientName" class="text-danger" placeholder="Patient Name"></span>
+                    </div>
+                    <div class="form-group text-primary bold">
+                        <label asp-for="MobileNo" class="control-label"></label>
+                        <input asp-for="MobileNo" class="form-control" />
+                        <span asp-validation-for="MobileNo" class="text-danger" placeholder="Mobile Number"></span>
+                    </div>
+                    <div class="form-group text-primary bold">
+                        <input class="form-check-input" asp-for="ConsultationStatus" /> @Html.DisplayNameFor(model => model.ConsultationStatus)
+
+                    </div>
+                    <div class="form-group text-primary bold">
+                        <label asp-for="DrId" class="control-label">Dr Name</label>
+                        <select asp-for="DrId" class="form-control" asp-items="ViewBag.DrId"></select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group text-primary bold">
+                        <a class="align-center"><img src="https://cdn.vectorstock.com/i/preview-2x/39/52/cartoon-doctor-vector-21683952.webp" height="300px" width="350px" /></a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input asp-area="Myusers" asp-controller="Thankyou" asp-action="Index" type="submit" value="Consult Confirm" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div>
+    <br /><br />
+    <h1>How it works</h1>
+    <br /><br />
+    <div class="row" style="column-gap:40px">
+        <div class="card">
+            <div class="card-body bi bi-check2-circle text-center">
+                <h5>Select a speciality or symptom</h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body bi bi-telephone-inbound text-center">
+                <h5>Audio/ video call with a verified doctor</h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body bi bi-person-lines-fill text-center">
+                <h5>Get a digital prescription & a free follow-up</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+<div>
+    <br /> <br /><br />
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

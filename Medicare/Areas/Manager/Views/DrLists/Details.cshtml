@@ -1,0 +1,241 @@
+﻿@model Medicare.Models.DrList
+
+@{
+    ViewData["Title"] = "Details";
+}
+<style>
+    body{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+.profile-img{
+    text-align: center;
+}
+.profile-img img{
+    width: 70%;
+    height: 100%;
+}
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.profile-head h5{
+    color: #333;
+}
+.profile-head h6{
+    color: #0062cc;
+}
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+.proile-rating{
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+.proile-rating span{
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
+.profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+}
+.profile-head .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom:2px solid #0062cc;
+}
+.profile-work{
+    padding: 14%;
+    margin-top: -15%;
+}
+.profile-work p{
+    font-size: 12px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: 10%;
+}
+.profile-work a{
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+}
+.profile-work ul{
+    list-style: none;
+}
+label{
+    font-weight:bold;
+}
+</style>
+<br /><br /><br />
+
+<div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src=" @Html.DisplayFor(model => model.ImageUrl)" alt=" Dr Photo" />
+                    
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                        @Html.DisplayFor(model => model.DrName)
+                    </h5>
+                    <h6>
+                      @Html.DisplayFor(model => model.Specialist.SpecialityName)
+                    </h6>
+                    <p class="proile-rating">RANKINGS : <span>9/10</span></p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <p>Certified</p>
+                    <a href="">Certified Doctor</a><br />
+                    <a href="">MBBS Degree</a><br />
+                    <a href="">Experienced</a>
+   <br />
+                    <a href="">Good Position</a><br />
+                    <a href="">Well Trained</a><br />
+                    <a href="">Proficient Surgeon</a><br />
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Doctor Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p> @Html.DisplayFor(model => model.DrName) </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Doctor Qualification</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p> @Html.DisplayFor(model => model.DrQualification)</p>
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Phone</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p> @Html.DisplayFor(model => model.PhoneNumber)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Profession</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p> @Html.DisplayFor(model => model.Specialist.SpecialityName)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Experience</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>@Html.DisplayFor(model => model.DrDescription)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Fee</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p> @Html.DisplayFor(model => model.DrFee)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>City </label>
+                            </div>
+                            <div class="col-md-6">
+                                <p> @Html.DisplayFor(model => model.DrCity.CityName)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Clinic</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>@Html.DisplayFor(model => model.ClinicAddress)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Availability</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p> @Html.DisplayFor(model => model.DrAvailability)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Thank you for visit !</label><br />
+                                <p>Stay safe Stay Healthy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <a class="btn btn-info" asp-action="UserIndex">Back to List</a>
+        </div>
+    </form>
+</div>
+
+<br /><br />
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DrId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

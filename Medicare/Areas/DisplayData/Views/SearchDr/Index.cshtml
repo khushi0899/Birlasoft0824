@@ -1,0 +1,97 @@
+﻿@using Medicare.Areas.DisplayData.ViewModels
+@model SearchDrViewModel
+@{
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+    </script>
+</head>
+<style>
+    .box{
+        text-align:center;
+    }
+    .card{
+        height:470px;
+        width:1500px;
+        text-align:center;
+
+    }
+</style>
+
+
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active"><br /><br /><br />
+            <img class="d-block w-100" src="https://thumbs.dreamstime.com/b/advertising-banner-family-medicine-cartoon-flat-large-family-came-routine-checkup-to-family-doctor-elderly-parents-adult-154160595.jpg" alt="vedio consultation" height="550px">
+            <div class="carousel-caption d-none d-md-block text-dark bold text-right" style="bottom:0%; margin-left:0px">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center">
+    <h1> Your Home for Health</h1>
+     <p> find doctor near you</p>
+     <br />
+</div>
+<div class="box">
+<div class="row text-center" >
+    <div class="col-md-8">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group" style="width:100%;">
+                <div class="text-center" style="width:50%; height:100px; float:right">
+                    <label asp-for="CityId" class="control-label"> Serch By City</label>
+                    <select asp-for="CityId" class="form-control" asp-items="ViewBag.CityID"></select>
+               
+                     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Search </button>
+                   </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<br /><br /><br />
+@*onchange="this.form.submit();"*@
+
+@if (Model != null && Model.DrList != null)
+{
+    <form method="post">
+        <input type="hidden" asp-for="CityId" />
+
+        <div class="card-columns mt-4">
+            @foreach (var item in Model.DrList)
+            { 
+
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h3 class="card-img-top"><img src="@item.ImageUrl" height="250px"  width="200px"/></h3>
+                        <h3 class="card-title">@item.DrSpecialities</h3>
+                        <h4 class="card-title"> @item.DrName </h4>
+                        <h5 class="card-text bold">Fee ₹@item.DrFee </h5>
+                         <h6 class="bi bi-telephone-outbound btn btn-info"> Call Now  @item.PhoneNumber</h6>
+                        <h4 class="text-bold text-info">Book Appointment</h4>
+                        
+                     </div>   
+                </div>
+            }
+        </div>
+    </form>
+}
+<br /><br /><br />

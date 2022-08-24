@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Medicare.Models.DrList>
+
+@{
+    ViewData["Title"] = "UserIndex";
+}
+
+
+<style>
+
+    table{
+        border:1px solid black;
+        box-shasow:10px 10px 5px #888;
+        height:700px;
+        width:400px;
+    }
+    table td{
+        text-align:center;
+        top:50px;
+    }
+</style>
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="https://thumbs.dreamstime.com/b/confident-female-doctor-office-desk-sitting-smiling-camera-health-care-prevention-concept-56351853.jpg" alt="vedio consultation" height="500px">
+            <div class="carousel-caption d-none d-md-block text-dark bold text-right" style="bottom:0%; margin-left:0px">
+                <h1> All Doctors List, You can See Doctor Profils</h1>
+                <p> Doctors Profils are available </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <br /><br />
+    <h1>
+        30+ Doctors 
+    </h1>
+    <h3>Consult with top doctors across specialities</h3>
+    <br /><br />
+</div>
+
+<div class="box">
+    <table class="table">
+        <thead class="text-center">
+            <tr style="height:60px">
+                <th>
+                    @Html.DisplayNameFor(model => model.ImageUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DrName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DrCity)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Specialist)
+                </th>
+                <th>
+                    Doctor Profile
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style="height:150px">
+                    <td class="text-center">
+                        <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" height="120px" width="120px" />
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(modelItem => item.DrName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DrCity.CityName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Specialist.SpecialityName)
+                    </td>
+                    <td>
+                        
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.DrId">View</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,765 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@*
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+*@
+
+
+
+
+ <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(https://th.bing.com/th/id/R.0feeebf177fa71c9b512f3beecff6094?rik=Pg8EcaiHy4UAyw&riu=http%3a%2f%2fareionvet.com%2fimages%2fbanner2.jpg&ehk=QDO41nngW7QWZAsO%2bVRaJcwEKwsXYbT2Lm1a%2bOwb65I%3d&risl=&pid=ImgRaw&r=0); width:100%">
+          <div class="container">
+            <h2>Welcome to <span>Medicio</span></h2>
+            <p>Choose the experts in end to end sugical care, medicines, Expert Doctors with MEDICIO. You are in safe hands</p>
+            <a href="#about" class="btn-get-started scrollto">Read More</a>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+            <div class="carousel-item" style="background-image: url(https://ung.edu/continuing-education/_uploads/images/certificate-programs/Six-Sigma-Healthcare-971x370.jpg); width:100%">
+          <div class="container">
+            <h2>Doctor Appointment</h2>
+            <p>Medicio also provide the services of Doctor Appointment easilly you can get appointment with our Experienced Doctors</p>
+            <a href="#about" class="btn-get-started scrollto">Read More</a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+            <div class="carousel-item" style="background-image: url(https://www.evergreenhealth.com/app/files/public/883f1d76-0dc7-433e-854b-24b1f1804fbf/virtual-visits-banner.jpg); width:100%">
+          <div class="container">
+            <h2>Vedio Consultation</h2>
+            <p > Vedio Consultation is also Available, so skill Travelling! Take online Dr Consultation</p>
+            <a href="#about" class="btn-get-started scrollto">Read More</a>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="bi bi-phone"></i></div>
+              <h4 class="title"><a href="">Vedio Consultation</a></h4>
+              <p class="description">Instant Vedio Consultation, with in 10 minetus</p>
+              <a class="stretched-link" asp-area="Manager" asp-controller="Consultations" asp-action="Create">Consult Now</a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="fas fa-pills"></i></div>
+              <h4 class="title"><a href="">Medicines</a></h4>
+              <p class="description">Essential at your doorstep</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><i class="bi bi-search"></i></div>
+              <h4 class="title"><a href="">Find Doctors in Your City</a></h4>
+              <p class="description">Confirmed appointment</p>
+              <a class="stretched-link" asp-area="DisplayData" asp-controller="SearchDr" asp-action ="Index">Consult Now</a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon"><i class="bi bi-award"></i></div>
+              <h4 class="title"><a href=""> Doctors List</a></h4>
+              <p class="description"> Safe and trusted surgery centers</p>
+               <a class="stretched-link" asp-area="Manager" asp-controller="DrLists" asp-action ="UserIndex">Consult Now</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="text-center">
+          <h3>In an emergency? Need help now?</h3>
+                <p>
+                    Medicio Care Surgery Expert are available, Connect with us. A dedicated Medicio Care Assistant will guide you at every step,
+                    Schedule a consultation with an expert Practo Care Doctor near you
+                    Get Diagnosis & Treatment advice from our expert doctors.
+
+                </p>
+          <a class="cta-btn scrollto" href="#appointment">Make an Make an Appointment</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <a name="aboutsection"></a>
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>Medicio Care is your partner in your journey to improve the health of yourself, your family members and friends. Medicio Care believes in providing affordable access to quality healthcare and helps patients pick the best surgery option for their health condition.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+                    <img src="https://www.practostatic.com/practo-care/brand_page/images/clinic_image_four.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+                    <h3>Health is a habit.</h3>
+            <p class="fst-italic">
+              It is the journey that takes you to new destinations every day with endless possibilities of life on the back of happiness, energy, and hope. Practo wants to make this journey easy for every Indian and help them live healthier and longer lives.
+            </p>
+            <ul>
+                        <li><i class="bi bi-check-circle"></i> 	Comprehensive medical directory with detailed, verified information about more than a lakh doctor partners across the country.</li>
+              <li><i class="bi bi-check-circle"></i> 	Online appointment booking at over 9,000 leading hospitals and clinics with doctors who use Medicio.</li>
+              <li><i class="bi bi-check-circle"></i> Online consultation with trusted doctors across 20+ specialities.</li>
+            </ul>
+            <p>
+             Medicio is on a mission to make quality healthcare affordable and accessible for over a billion+ Indians. We believe in empowering our users with the most accurate, comprehensive, and curated information and care, enabling them to make better healthcare decisions.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-user-md"></i>
+              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Doctors</strong> Get Diagnosis & Treatment advice from our expert doctors</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="far fa-hospital"></i>
+              <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="1" class="purecounter"></span>
+               <p><strong>All Experts</strong> Choose one of our partner hospitals that meets your requirements</p>
+             </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-flask"></i>
+              <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Medicines</strong> All medicines & Health products are sourced from Medicio truested network of verified pharmacies and medical stores</p>
+            
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-award"></i>
+              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+                        <p><strong>Search Doctors</strong>Skip the travel!Take Online Doctor Consultation.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+            <div class="icon-box mt-5 mt-lg-0">
+              <i class="bx bx-receipt"></i>
+              <h4>Connect</h4>
+            <p>We understand healthcare goes beyond signs, symptoms, diagnosis, and treatment. It’s about the deep connection between doctors and patients that leads to continuous care and sustained, better outcomes.</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-cube-alt"></i>
+              <h4>Trust</h4>
+            <p>Practo works on trust. We are aware of the responsibility placed on us by 30 crore+ patients and over a lakh doctors. We always have and always will do everything we possibly can to uphold this trust.</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-images"></i>
+              <h4>Transparency</h4>
+             <p>We believe in full disclosure. We believe in communicating openly and honestly, and holding ourselves to the highest ethical standards</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-shield"></i>
+              <h4>Top priority</h4>
+              <p>Top priority has always served, and we go to great lengths to safeguard the confidentiality and integrity of our users</p>
+            </div>
+          </div>
+          <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url(https://www.practostatic.com/practo-care/brand_page/images/dweb_banner_2.webp);' data-aos="zoom-in"></div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+   
+    <!-- ======= Services Section ======= -->
+    <a name="services"></a>
+    <section id="services" class="services services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+                <p>Order all the tablets,Products online and maintian your safty and also
+                    <strong>Consult top doctors online for any health concern</strong>
+                 Private online consultations with verified doctors in all specialists
+                </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+             <div class="icon"><i class="bi bi-phone"></i></div>
+             <h4 class="title"><a href="">Vedio Consultation</a></h4>
+             <p class="description">There are several ways to reach out to a doctor without the need to visit a hospital or clinic, all thanks to technology. 
+                 </p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-hospital-user"></i></div>
+            <h4 class="title"><a href="">Book Appointment</a></h4>
+            <p class="description">If your health issues are complicated and your general practitioner feels that it needs immediate medical attention from a specialised doctor, you may be recommended to one.
+                </p>
+          </div>
+
+           <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-pills"></i></div>
+            <h4 class="title"><a href="">Order Medicines</a></h4>
+            <p class="description">ORDER MEDICINE ONLINE FROM Genuine medicines and essentials delivered in a jiffy! </p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon"><i class="bi bi-award"></i></div>
+            <h4 class="title"><a href="">Expert Doctor List</a></h4>
+                    <p class="description">All Expert list are available you can connect Simply.You can also get an online consultation with a medical specialist if you aren’t satisfied with the results</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="bi bi-search"></i></div>
+            <h4 class="title"><a href="">Find Doctor Near You</a></h4>
+            <p class="description">Medicio also provide a Dr list Based on location you can simply search the Doctor near you and take appointment.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-notes-medical"></i></div>
+            <h4 class="title"><a href="">Consult Doctor Specilist</a></h4>
+                    <p class="description">All the Specialist List are available With the online facility available, doctor consultations have become easier, which can help you get the right health care. </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Appointment Section ======= -->
+   @* <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Make an Appointment</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <form action="forms/appointment.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 form-group mt-3">
+              <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" required>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="department" id="department" class="form-select">
+                <option value="">Select Department</option>
+                <option value="Department 1">Department 1</option>
+                <option value="Department 2">Department 2</option>
+                <option value="Department 3">Department 3</option>
+              </select>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="doctor" id="doctor" class="form-select">
+                <option value="">Select Doctor</option>
+                <option value="Doctor 1">Doctor 1</option>
+                <option value="Doctor 2">Doctor 2</option>
+                <option value="Doctor 3">Doctor 3</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Make an Appointment</button></div>
+        </form>
+
+      </div>
+    </section>*@
+    <!-- End Appointment Section -->
+
+     <!--Medicines deparment-->
+    <a name="departments"></a>
+    <section id="departments" class="departments">
+      <div class="container" data-aos="fade-up">
+          <div class="section-title">
+                      <h2>Departments</h2>
+          <h4>Medicines Department</h4>
+          <p>The concept of medicine home delivery has been taken to a new level by the Medicio online medicine delivery. You can use the Medicio online medicine to browse through an extensive range of medicines.</p>
+          </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                  <h4>Skin Care</h4>
+                  <p>All Skin Products are available in Medicio.</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                  <h4>Cold & cough</h4>
+                  <p>Cold and cough medicines can help relieve symptoms of a common cold. The symptoms of a cold can include a sore throat, stuffy or runny nose, sneezing, and coughing.</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                  <h4>Pain relief</h4>
+                  <p>Pain relievers are medicines that reduce or relieve headaches, sore muscles, arthritis, or other aches and pains.</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                  <h4>Heart Care</h4>
+                  <p>For your Heart care, all Heart Care products are available in Medicio. </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-8">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <h3>Skin Care</h3>
+                <p class="fst-italic">Cosmetology application of beauty treatment.</p>
+                <img src="https://im.idiva.com/content/2022/Apr/natural-skincare_freepik_62693fa22b895.jpg" alt="Skin Care Product" class="img-fluid">
+                <p>Skin care Products are cosmetic preparations, antiseptics, tonics, lotions, creams, or otherwise, massaging, cleansing, stimulating, .</p>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <h3>Cough & Cold</h3>
+                            <p class="fst-italic"> The common cold is a viral infection of your nose and throat .</p>
+                <img src="https://5.imimg.com/data5/SELLER/Default/2020/9/SF/SK/CV/2005120/cough-medicine-250x250.jpg" alt="Cough & cold Product" class="img-fluid">
+                <p>Cold medicines are a group of medications taken individually or in combination as a treatment for the symptoms of the common cold and similar conditions of the upper respiratory tract.</p>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <h3>Pain Relief</h3>
+                <p class="fst-italic"></p>
+                 <img src="https://www.okpapa.com.bd/wp-content/uploads/2021/02/your-pro-max.png" alt="Pain Relief Product" class="img-fluid">
+                 <p>Pain management is an aspect of medicine and health care involving relief of pain in various dimensions, from acute and simple to chronic and challenging</p>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <h3>Heart Care </h3>
+                 <p class="fst-italic">Care your Heart.</p>
+                            <img src="https://m.media-amazon.com/images/I/71KbmEx4grL._SL1500_.jpg" alt="Heart Care Product" class="img-fluid">
+                 <p> Arjuna helps in improving coronary artery blood flow, reducing the chances of clot formation and protects the heart muscles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    @*Doctors Departments*@
+    <!-- ======= Departments Section ======= -->
+    <section id="departments" class="departments">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h4> Doctors Department</h4>
+                 <p>Expertise involves mastering some area of knowledge and in turn using this mastery to educate others or skillfully practice one's craft. Medicio ha practiced or expertise Doctors with deeper understanding of it may promise a deeper understanding of Patient.</p>
+            </div>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <ul class="nav nav-tabs flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                                <h4>Gynecologist</h4>
+                                <p>They diagnose and treat issues related to the female reproductive tract.</p>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                                <h4>Dermatologist</h4>
+                                <p>Dermatologist is a doctor who specializes in conditions involving the skin, hair, and nails</p>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                                <h4>Urologist</h4>
+                                <p>A urologist is a medical doctor specializing in conditions that affect the urinary tract in men, women and children, and diseases that affect the reproductive system.</p>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                                <h4>Pediatrics</h4>
+                                <p>A pediatrician is a medical doctor who manages the physical, behavioral, and mental care for children </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-8">
+                    <div class="tab-content">
+                        <div class="tab-pane active show" id="tab-1">
+                            <h3>Gynecologist</h3>
+                            <p class="fst-italic"> A gynecologist is a doctor who specializes in female reproductive health.</p>
+                            <img src="https://www.sghshospitals.com/images/medical-specialist8.png" alt="Gynecologist" class="img-fluid">
+                            <p>Gynaecology or gynecology (see spelling differences) is the area of medicine that involves the treatment of women's diseases, especially those of the reproductive organs. It is often paired with the field of obstetrics, forming the combined area of obstetrics and gynecology (OB-GYN).</p>
+                        </div>
+                        <div class="tab-pane" id="tab-2">
+                            <h3>Dermatologist</h3>
+                            <p class="fst-italic"> A dermatologist is the medical expert you should consult if you have any significant problem with your skin.</p>
+                            <img src="https://cf.jddonline.com/wp-content/uploads/2020/04/stock_patient_care_1.jpg" alt="" class="img-fluid">
+                            <p>Dermatologists are expert medical doctors and skin surgeons with the unique skills and experience to offer the best care for the organ that cares for you..</p>
+                        </div>
+                        <div class="tab-pane" id="tab-3">
+                            <h3>Urologist</h3>
+                            <p class="fst-italic">urologist might treat bladder problems, urinary tract infections (UTIs), bladder and kidney cancer, kidney blockage, and kidney stones</p>
+                            <img src="https://amarhospital.com/wp-content/uploads/2020/06/urology.jpg" alt="" class="img-fluid">
+                            <p>Urologists are doctors who specialize in the treatment of diseases and conditions affecting the urinary system, including the bladder, kidney, ureter, urethra, and adrenal glands. In men, they treat all ailments concerning the penis, prostate, epididymis, seminal vesicles, and the testes.</p>
+                        </div>
+                        <div class="tab-pane" id="tab-4">
+                            <h3>Pediatrics</h3>
+                            <p class="fst-italic">. Pediatricians prevent, detect and manage physical, behavioral and developmental issues that affect children.</p>
+                            <img src="https://uploads.sarvgyan.com/2016/03/Pediatrician.jpg" alt="" class="img-fluid">
+                            <p>A pediatrician is a doctor who focuses on the health of infants, children, adolescents and young adults. Pediatric care starts at birth and lasts through a child's 21st birthday or longer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </section><!-- End Departments Section -->
+
+  <a name="doctors"></a>
+    <!-- ======= Doctors Section ======= -->
+    <section id="doctors" class="doctors section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Doctors</h2>
+          <p>A medical specialty is a specific area of medical practice that mainly focuses on a defined set of diseases, patients, philosophy, or skills. Examples include Paediatrics, Dermatology, Psychiatry, Gynaecology, and more. </p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="	https://th.bing.com/th/id/OIP.lO24Kgy2hoJAmhzpsTtUiQAAAA?pid=ImgDet&w=216&h=216&rs=1" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Dr Vashudha Shekhar </h4>
+                <span>Chief Medical Officer</span>
+                <span><strong>Expert Gynecologist</strong></span>
+                <p>29 Years of Experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="https://th.bing.com/th/id/OIP.XgHawpf1mtdNs79dTCtyRgAAAA?pid=ImgDet&w=216&h=216&rs=1" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Dr Soumya Podduturi</h4>
+                <span>Chief Medical Officer</span>
+                <span> <strong>Expert Dermatologist</strong></span>
+                 <p>29 Years of Experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="https://d3wnzga3fpd9a.cloudfront.net/photos/Dr-Talha-Khan-MD-201571-circle_large__v1__.png" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                            <h4>Dr. Vasanth Kumar</h4>
+                            <span>Chief Medical Officer</span>
+                            <span> <strong>Expert Pediatrician</strong></span>
+                            <p>15 Years of Experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="400">
+              <div class="member-img">
+                <img src="https://th.bing.com/th/id/OIP.JbljSjs2RNW5kdYzb_icxAAAAA?pid=ImgDet&w=400&h=400&rs=1" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Dr. Hari Shankar</h4>
+                <span>Chief Medical Officer</span>
+               <span> <strong>Expert Urologist</strong></span>
+               <p>20 Years of Experience</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Doctors Section -->
+
+    
+    <!-- ======= Gallery Section ======= -->
+    <a name="gallerys"></a>
+    <section id="gallery" class="gallery">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Gallery</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="gallery-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-1.jpg"><img src="~/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-2.jpg"><img src="~/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-3.jpg"><img src="~/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-4.jpg"><img src="~/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-5.jpg"><img src="~/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-6.jpg"><img src="~/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-7.jpg"><img src="~/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-8.jpg"><img src="~/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+    <a name="frequently"></a>
+    <!-- ======= Frequently Asked Questioins Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Frequently Asked Questioins</h2>
+        </div>
+
+        <ul class="faq-list">
+
+          <li>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Do I need a dr appointment before consulting? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+               It is advisable to book an appointment with your dr prior to going for a consultation, to avoid clashes in availability and long waiting times. Nowadays, it is very easy to book an appointment online with your dentist.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question"> Can a root canal be done by any dentist? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                            Though general dentists are qualified and trained in performing the root canal procedure, they may also refer patients to an endodontist, who specialises in diagnosing and treating conditions related to tooth pain and performs procedures like root canal.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Can Physiotherapist treat back pain? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                  Yes, Physiotherapists can help an individual to reduce his/her back pain and improves joints movement and functions. A Physiotherapist can suggest new lifestyle modifications to an individual that helps them to improve their daily life and reduce the chances of getting back pain.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question"> Are Physiotherapists and massage therapists the same? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                            Physiotherapists are health care professionals who help the patient to improve the mobility and pain by using techniques like mobilization of joints, muscle energy, and dry needling, etc. Massage therapists are the one who focuses on tissue manipulation by hand and with the help of some creams and oils.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Can General Surgeon treat joint pain? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                  If the joint pain is mild to moderate, then medications may be prescribed by your doctor to reduce the pain in joints. However, if the joint pains are severe and not responding to medication, General Surgeons may refer the patient to an Orthopedic Surgeon for further investigations.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">What surgeries can be performed by a General Surgeon? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                  General Surgeon performs many surgeries to treat and cure most of the medical conditions and diseases. Few of the surgeries.</p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section><!-- End Frequently Asked Questioins Section -->
+
+    <!-- ======= Contact Section ======= -->
+     <a name="contact"></a>
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+
+        </div>
+
+      </div>
+
+      <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31089.161526030308!2d80.19007686873628!3d13.089983360538845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5264078822719b%3A0xbda01077b89581e2!2sAnna%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1661275576267!5m2!1sen!2sin" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="container">
+
+        <div class="row mt-5">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3>Our Address</h3>
+                  <p>A108 Anna Nagar Street, Chennai,535022</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>Medicio@gmail.com</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Call Us</h3>
+                  <p>5589 55488 55<br> 6678 254445 41</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+         @* <div class="col-lg-6">
+            <form action="forms" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col form-group mt-3">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>*@
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->

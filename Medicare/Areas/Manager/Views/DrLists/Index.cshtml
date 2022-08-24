@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Medicare.Models.DrList>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+
+    table{
+        border:1px solid black;
+        box-shasow:10px 10px 5px #888;
+        height:700px;
+        width:400px;
+    }
+    table td{
+        text-align:center;
+        top:50px;
+    }
+</style>
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="box">
+<table class="table">
+    <thead class="text-center">
+        <tr style="height:60px">
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DrName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DrCity)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Specialist)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr style="height:150px">
+                <td class="text-center">
+                   <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" height="120px" width="120px"/>
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.DrName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DrCity.CityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Specialist.SpecialityName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DrId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.DrId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DrId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

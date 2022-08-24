@@ -1,0 +1,103 @@
+﻿@using Medicare.Areas.DisplayData.ViewModels
+@using Medicare.Models;
+@model DisplayDataViewModel
+@{
+}
+
+<h1>
+    All Categories
+</h1>
+
+<br /><br /><br /><br /><br/>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="ProductCategoryId" class="control-label"></label>
+                <select asp-for="ProductCategoryId" class="form-control" asp-items="ViewBag.ProductCategoryId" onchange="this.form.submit();"></select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Get items</button>
+        </form>
+    </div>
+</div>
+
+
+
+@*
+@foreach(ProductCategories category in ViewBag.Categories)
+{
+    <p>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           <div class="form-group">
+               @category.ProductCategoryName;
+           </div>
+            <button type="submit" class="btn btn-primary">Get items</button>
+        </form>
+    </p>
+}*@
+
+@if (Model != null && Model.Products != null)
+{
+    <form method="post">
+        <input type="hidden" asp-for="ProductCategoryId" />
+
+        <div class="card-columns mt-3">
+            @foreach (var item in Model.Products)
+            {
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title"> @item.ProductName </h4>
+                        <p class="card-text"> @item.ProductDescription </p>
+                    </div>
+                    <div class="card-footer">
+                        @{
+                            var ddlName = $"QuantityFor{item.ProductId}";
+                            <select id="@ddlName" name="@ddlName">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        }
+                        <button class="btn btn-sm btn-primary"
+                        type="button" onclick="fAddToCart(@item.ProductId)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    </form>
+}
+
+
+@section Scripts {
+    <script>
+        function fAddToCart(productId) {
+            
+            let data = {
+                "productId": productId,
+                "orderQuantity": parseInt($('#QuantityFor' + productId).val())
+            };
+            console.log(data);                                  // for DEBUGGING purposes
+            const http = new XMLHttpRequest();
+            const url = '/api/AddToOrder';
+            try {
+                http.open('POST', url);
+                http.setRequestHeader('content-type', 'application/json');
+                http.send(JSON.stringify(data));
+                http.onload = function () {
+                    console.log(http.responseText);             // for DEBUGGING purposes
+                    let responseObject = JSON.parse(http.responseText);
+                    alert(responseObject.status);           // from the JSON serialization object received in the response.
+                };
+            }
+            catch (error) {
+                alert(error.message);
+            }
+        }
+    </script>
+} 
